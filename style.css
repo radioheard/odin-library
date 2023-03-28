@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', monospace;
+}
+
+h4 {
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: .5px solid rgb(190, 190, 190);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: 170px 150px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 20px;
+    height: 100%;
+
+}
+
+p {
+    font-size: 14px;
+}
+form {
+    border: 1px rgb(95, 95, 95) solid;
+    z-index: 1;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    margin-top: -40px;
+    margin-left: -40px;
+    visibility: hidden;
+    background-color: white;
+    gap: 20px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+label {
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+.container > div {
+    padding: 10px;
+}
+
+.title {
+    height: 10vh;
+    font-weight: 700;
+    font-size: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.add {
+    height: 8vh;
+    background-color: rgb(0, 255, 170);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+#add {
+    margin: 10px;
+}
+
+.remove {
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    align-self: flex-end;
+    border-radius: 4px;
+    border: none;
+    font-size: 10px;
+}
+
+.remove:active {
+    background-color: rgb(122, 0, 0);
+}
+
+.read,
+.unread {
+    border-style: none;
+    font-weight: bold;
+    align-self: stretch;
+    height: 22px;
+    border-radius: 10px;
+}
+
+.read {
+    background-color: rgb(118, 245, 186);
+}
+
+.unread {
+    background-color: rgb(240, 123, 123);
+}
+
+.footer {
+    height: 10vh;
+    background-color:rgb(0, 128, 85);
+    color: azure;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,31 +1,27 @@
-let myLibrary = [
-    {
-        title: 'The hobbit',
-        author: 'Joe Mama',
-        read: true,
-    },
+let myLibrary = [];
 
-    {
-        title: '1984',
-        author: 'George Orwell',
-        read: true,
+
+
+class Book{
+    constructor(title, author, boolean) {
+        this.title = title
+        this.author = author
+        this.read = boolean
     }
-
-];
-
-
-
-function Book(title, author, boolean) {
-  this.title = title
-  this.author = author
-  this.read = boolean
 }
 
 function addBookToLibrary() {
     let newAuthor = document.querySelector('#author').value;
     let newTitle = document.querySelector('#title').value;
-    let newRead = (document.querySelector('#read').name==='true');
-    let book = new Book(newTitle, newAuthor, newRead);
+    let newRead = () => {
+        var value= document.getElementsByName('read');
+        for (var radio of value){
+        if (radio.checked) {    
+            return (radio.value == "read");
+            }
+        }
+    };
+    let book = new Book(newTitle, newAuthor, newRead());
     myLibrary.push(book);
 }
 

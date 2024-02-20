@@ -92,13 +92,38 @@ const grid = document.getElementById('grid');
 
 const form = document.getElementById('form')
 const add = document.getElementById('add');
+const author = document.getElementById('author');
+const title = document.getElementById('title');
+const span = document.querySelector('span');
+
 add.addEventListener('click', ()=> form.style.visibility = 'visible');
 const submit = document.getElementById('submit');
+
+author.addEventListener('input', () => validator());
+title.addEventListener('input', ()=> validator())
+
+function validator () {
+    if (author.checkValidity() == true && title.checkValidity() == true) {
+        span.classList.add('good');
+        span.textContent = 'Good To Go!';
+        submit.disabled = false;
+    } else {
+        span.classList.remove('good')
+        span.textContent = 'Please fill!';
+        submit.disabled = true;
+    }
+}
+
 submit.addEventListener('click', (event) => {
     form.style.visibility = 'hidden';
     addBookToLibrary();
     event.preventDefault();
     showLibrary();
+    span.classList.remove('good')
+    span.textContent = 'Please fill!';
+    submit.disabled = true;
+    author.value = '';
+    title.value = '';
 });
 
 showLibrary();
